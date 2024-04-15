@@ -19,25 +19,25 @@ mod_module_compare_ui <- function(id){
 #'
 #' @noRd
 mod_module_compare_server <- function(id, r){
-  moduleServer(id, function(input, output, session){
-    date <- value <- cmdty <- NULL
-    df <- r$df_stocks
-    output$equity_plot <- renderPlotly({
-      plotly::plot_ly(
-        data = df,
-        x = ~date,
-        y = ~value,
-        color = "red",
-        type = "scatter",
-        mode = "lines"
-      ) %>%
-      plotly::layout(
-        title = list(text = "Price Movement of A Producer of Selected Metal"),
-        xaxis = list(text = "Time"),
-        yaxis = list(text = "Price")
-      )
-    })
-  })
+  moduleServer(id,
+               function(input, output, session){
+                output$equity_plot <- renderPlotly({
+                    data_equities <- r$df_stocks
+                    plotly::plot_ly(
+                      data = data_equities,
+                      x = ~date,
+                      y = ~value,
+                      color = "red",
+                      type = "scatter",
+                      mode = "lines"
+                    ) %>%
+                  plotly::layout(
+                      title = list(text = "Price Movement of A Producer of Selected Metal"),
+                      xaxis = list(text = "Time"),
+                      yaxis = list(text = "Price")
+                  )
+                })
+              })
 }
 
 ## To be copied in the UI

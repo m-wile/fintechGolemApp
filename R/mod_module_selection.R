@@ -25,13 +25,16 @@ mod_module_selection_server <- function(id, r){
   moduleServer(id,
                 function(input, output, session){
                     shiny::observeEvent(input$cmd, {
+
                       r$commodity <- input$cmd
+
                       dfc <- mwile::comms %>%
                         dplyr::filter(cmdty == r$commodity)
+                      r$df_comms <- dfc
+
                       dfs <- mwile::stocks %>%
                         dplyr::filter(cmdty == r$commodity)
-                      df_comms <- dfc
-                      df_stocks <- dfs
+                      r$df_stocks <- dfs
                     })
                   })
 }

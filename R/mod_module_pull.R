@@ -23,9 +23,6 @@ mod_module_pull_ui <- function(id){
 mod_module_pull_server <- function(id, r){
   moduleServer(id,
                 function(input, output, session){
-                  ns <- session$ns
-                  reactive({
-                  date <- value <- cmdty <- NULL
                     output$textR <- renderText({
                       paste("Your chosen commodity is ", r$commodity)
                     })
@@ -46,7 +43,6 @@ mod_module_pull_server <- function(id, r){
                         )
                     })
                 })
-            })
 }
 
 
