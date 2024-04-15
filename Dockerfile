@@ -6,8 +6,8 @@ RUN apt-get update && apt-get install -y git \
     libproj-dev \
     libmysqlclient-dev
 
-RUN git clone https://github.com/m-wile/fintechGolemApp.git /srv/shiny-server/MetalComms
-RUN R -e "install.packages(c(MetalComms))"
+RUN git clone https://github.com/m-wile/fintechGolemApp.git
+RUN R -e "install.packages(MetalComms)"
 
 EXPOSE 3838
 
