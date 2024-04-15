@@ -11,7 +11,15 @@
 mod_module_compare_ui <- function(id){
   ns <- NS(id)
   tagList(
-    plotly::plotlyOutput(ns("equity_plot"))
+    shiny::br(),
+    shiny::textOutput(ns("textR")),
+    shiny::br(),
+    shiny::br(),
+    plotly::plotlyOutput(ns("equity_plot")),
+    shiny::br(),
+    tags$li("The industry is not 100% reflected in the producer's stock price"),
+    shiny::br(),
+    tags$li("The job of a trader is not to increase stock price, but to provide value from a production perspective"),
   )
 }
 
@@ -21,6 +29,9 @@ mod_module_compare_ui <- function(id){
 mod_module_compare_server <- function(id, r){
   moduleServer(id,
                function(input, output, session){
+                output$textR <- renderText({
+                    paste("Your chosen commodity is ", r$commodity)
+                })
                 output$equity_plot <- renderPlotly({
                     data_equities <- r$df_stocks
                     plotly::plot_ly(

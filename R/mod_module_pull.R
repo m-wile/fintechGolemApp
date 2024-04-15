@@ -11,9 +11,24 @@
 mod_module_pull_ui <- function(id){
   ns <- NS(id)
   tagList(
+    shiny::br(),
     shiny::textOutput(ns("textR")),
+    shiny::br(),
+    shiny::br(),
     plotly::plotlyOutput(ns("metal_plot")),
-    plotly::plotlyOutput(ns("price_plot"))
+    shiny::br(),
+    tags$li("The goal of metal's producers is to sell at beneficial prices"),
+    shiny::br(),
+    tags$li("Prices are not consistent through time and without risk management, so are revenues!"),
+    tags$li("To do so, metal producers give up the potential gain of an increasing price to avoid the potential loss of a decreasing price by hedging"),
+    tags$li("The role of traders is to manage price risk by trading financial derivatives"),
+    shiny::br(),
+    tags$li("ORDER OF PRIORITY : "),
+    tags$ul(
+      tags$li("1. Know more about your commodity than anybody"),
+      tags$li("2. Manage price risk created by production"),
+      tags$li("3. Profit off of trading portfolio")
+    )
   )
 }
 
@@ -32,7 +47,7 @@ mod_module_pull_server <- function(id, r){
                           data = data_metals,
                           x = ~date,
                           y = ~value,
-                          color = ~"blue",
+                          color = "blue",
                           type = "scatter",
                           mode = "lines"
                       ) %>%

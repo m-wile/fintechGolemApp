@@ -12,6 +12,7 @@ app_ui <- function(request) {
     fluidPage(
       theme = bslib::bs_theme(bootswatch = "vapor"),
       h1("The Metals Industry : Communication & Application"),
+      h2("The Purpose of Metals Trading From A Producer's Perspective"),
       mod_module_selection_ui("module_selection_1"),
       shiny::tabsetPanel(
         shiny::tabPanel("Commodity Price Effects", mod_module_pull_ui("module_pull_1")),
