@@ -11,7 +11,7 @@
 #' @import mwile
 mod_module_selection_ui <- function(id){
   ns <- NS(id)
-  opts <- c("Copper", "Gold", "Silver", "Platinum")
+  opts <- c("Copper", "Gold", "Silver")
   tagList(
     shiny::selectInput(ns("cmd"), "Choose A Commodity", choices = opts, selected = "Copper"),
     shiny::textOutput(ns("tR"))
