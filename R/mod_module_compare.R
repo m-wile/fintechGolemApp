@@ -20,6 +20,8 @@ mod_module_compare_ui <- function(id){
     tags$li("The industry is not 100% reflected in the producer's stock price"),
     shiny::br(),
     tags$li("The job of a trader is not to increase stock price, but to provide value from a production perspective"),
+    shiny::br(),
+    shiny::br()
   )
 }
 

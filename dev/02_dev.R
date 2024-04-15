@@ -28,6 +28,8 @@ usethis::use_package("bslib")
 golem::add_module(name = "module_pull", with_test = TRUE)
 golem::add_module(name = "module_selection", with_test = TRUE)
 golem::add_module(name = "module_compare", with_test = TRUE)
+golem::add_module(name = "module_overlay", with_test = TRUE)
+
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*

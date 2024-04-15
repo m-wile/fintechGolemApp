@@ -15,8 +15,9 @@ app_ui <- function(request) {
       h2("The Purpose of Metals Trading From A Producer's Perspective"),
       mod_module_selection_ui("module_selection_1"),
       shiny::tabsetPanel(
-        shiny::tabPanel("Commodity Price Effects", mod_module_pull_ui("module_pull_1")),
-        shiny::tabPanel("Equity Price Effects", mod_module_compare_ui("module_compare_1"))
+        shiny::tabPanel("Commodity Price", mod_module_pull_ui("module_pull_1")),
+        shiny::tabPanel("Stock Price", mod_module_compare_ui("module_compare_1")),
+        shiny::tabPanel("Commodity vs Equity Comparison", mod_module_overlay_ui("module_overlay_1"))
       )
     )
   )

@@ -28,7 +28,9 @@ mod_module_pull_ui <- function(id){
       tags$li("1. Know more about your commodity than anybody"),
       tags$li("2. Manage price risk created by production"),
       tags$li("3. Profit off of trading portfolio")
-    )
+    ),
+    shiny::br(),
+    shiny::br()
   )
 }
 
