@@ -30,19 +30,3 @@ A) Commodity-Producer Comparisons
 B) Forward curves of gold and silver
 --> What is this suggesting about these markets? About the economic state? How do they differ? How are they similar? 
 
-
-
-```{r}
-library(worldfootballR)
-brasil <- worldfootballR::fb_teams_urls("https://fbref.com/en/comps/24/Serie-A-Stats")
-palmeiras <- worldfootballR::fb_player_urls(brasil[13])
-scout <- data.frame()
-for (i in 1:length(palmeiras)) {
-  s <- worldfootballR::fb_player_season_stats(player_url = palmeiras[i], stat_type = "standard")
-  scout <- rbind(scout, s)
-}
-
-p <- brasil[13]
-ts <- fb_squad_wages(team_urls = p)
-```
-
