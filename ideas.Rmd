@@ -1,0 +1,48 @@
+---
+title: "ramblings"
+author: "Matthew Wile"
+date: "2024-04-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+General Goal : Communication
+
+In an enterprise situation, how important is it to first be necessary and second to ensure others know you're necessary.
+
+The point of this app then is as a communication tool into the finance professionals process.
+
+Ideas:
+- Difference between commodity and producer equity. How related are they, why or why not in specific instances?
+- Forward curves. What is this suggesting about the market? About the general economic state?
+- Risk management techniques. How important is it to levy risk? What happens if you don't?
+- Describe the role of the finance professional in the enterprise
+
+Data Examples
+A) Commodity-Producer Comparisons
+1. Palladium & Platinum vs Sibanye-Stillwater @SBSW
+2. Silver vs Pan-American Silver @PAAS
+3. Gold vs Barrick Gold @GOLD
+--> Understanding the commodity, what makes it different? What else is SBSW exposed to?
+B) Forward curves of gold and silver
+--> What is this suggesting about these markets? About the economic state? How do they differ? How are they similar? 
+
+
+
+```{r}
+library(worldfootballR)
+brasil <- worldfootballR::fb_teams_urls("https://fbref.com/en/comps/24/Serie-A-Stats")
+palmeiras <- worldfootballR::fb_player_urls(brasil[13])
+scout <- data.frame()
+for (i in 1:length(palmeiras)) {
+  s <- worldfootballR::fb_player_season_stats(player_url = palmeiras[i], stat_type = "standard")
+  scout <- rbind(scout, s)
+}
+
+p <- brasil[13]
+ts <- fb_squad_wages(team_urls = p)
+```
+

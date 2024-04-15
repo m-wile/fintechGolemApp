@@ -1,0 +1,22 @@
+Package: MetalComms
+Title: Communicating the Metals World
+Version: 0.0.0.9000
+Authors@R: person('Matthew', 'Wile', email = 'wile@ualberta.ca', role = c('cre', 'aut'))
+Description: A Tool for Collaboration and Understanding of the Finance Professional's Role in the Metals Industry.
+    Built as a replication for academic purposes.
+License: MIT + file LICENSE
+Imports: 
+    bslib,
+    config (>= 0.3.2),
+    dplyr,
+    ggplot2,
+    golem (>= 0.4.1),
+    mwile,
+    plotly,
+    shiny (>= 1.8.0)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
