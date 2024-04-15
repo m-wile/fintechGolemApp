@@ -11,4 +11,4 @@ RUN R -e "install.packages(c(MetalComms))"
 
 EXPOSE 3838
 
-CMD ["/init"]
+CMD ["/init, shiny::runApp(port = 3838)"]
